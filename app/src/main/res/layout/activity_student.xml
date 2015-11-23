@@ -1,0 +1,74 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:background="#00000000"
+    android:layout_height="match_parent">
+
+    <!-- Content of this layout-->
+    <FrameLayout
+        android:id="@+id/layoutFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:background="#0000"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="21dp"
+            android:id="@+id/menu_button"
+            android:onClick="onClick" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|center_vertical"
+        android:background="@drawable/drawer"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:paddingRight="10dp">
+
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="66dp"
+            android:background="#0000"
+            android:layout_marginTop="148dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/schedule_button"
+            android:onClick="onClick" />
+
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="66dp"
+            android:background="#0000"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/state_button"
+            android:onClick="onClick" />
+
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="66dp"
+            android:background="#0000"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/option_button"
+            android:onClick="onClick" />
+
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="66dp"
+            android:background="#0000"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/logout_button"
+            android:onClick="onClick" />
+    </LinearLayout>
+
+    <!-- Drawer -->
+
+</android.support.v4.widget.DrawerLayout>
+
