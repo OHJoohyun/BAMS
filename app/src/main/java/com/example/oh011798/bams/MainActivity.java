@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -21,23 +22,20 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
 
     private CheckDuplicatioinId myAsyncTask;
-    public String check;
+    public String check = "Error";
+    public String result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myAsyncTask = new CheckDuplicatioinId();
-
     }
     public void onClick(View view)
     {
         switch (view.getId()) {
             case R.id.login_button: {
-                Intent intent = new Intent(this, StudentActivity.class);
                 myAsyncTask.execute("80", "90", "100", "110");
-                startActivity(intent);
-                finish();
                 break;
             }
             case R.id.signup_button: {
@@ -49,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void success()
+    {
+        Intent intent = new Intent(this, StudentActivity.class);
+        Log.e("TEST", check);
+        if(check.equals("200"))
+        {
+            startActivity(intent);
+            finish();
+        }
+        else
+        {
+            Toast.makeText(MainActivity.this, "실패", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     /* HTTP 통신을 위한 CLASS */
     private class CheckDuplicatioinId extends AsyncTask<String, Void, String> {
 
@@ -56,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... sId) {
 
             String sResult = "Error";
-
-            Log.e("Http", "TESTTEST");
 
             try {
                 URL url = new URL("http://jam0929.lul.lu/bams/api/users/signin");
@@ -88,9 +99,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("BAMS", sResult);
 
                 JSONObject jsonObject = new JSONObject(sResult);
-                check = jsonObject.getString("response");
+                check = jsonObject.getString("response").toString();
+                Log.e("BAMS", jsonObject.getString("response"));
                 Log.e("BAMS", check);
-
+                success();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
