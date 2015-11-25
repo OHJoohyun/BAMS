@@ -51,6 +51,7 @@ public class StartActivity extends Activity {
             case R.id.logout_button: {
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             }
         }
