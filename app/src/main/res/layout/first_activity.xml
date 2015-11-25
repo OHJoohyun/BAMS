@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+        <Button
+            android:id="@+id/List01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button5"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="시간표"
+            android:textColor="#fcf9f9"
+            android:textSize="60px" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <Button
+            android:id="@+id/Button02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button2"
+            android:layout_alignParentRight="true"
+            android:gravity="right" />
+
+        <Button
+            android:id="@+id/Button01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button1"
+            android:gravity="right"
+            android:layout_toLeftOf="@id/Button02"/>
+
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:background="#17375e"
+        android:stretchColumns="*">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#31859c"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#266678"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="교시"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#266678"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="월"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#266678"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="화"
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#266678"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="수"
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#266678"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="목"
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_margin="4dp"
+                android:background="#266678"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="금"
+                android:textSize="40px" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#31859c"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="A"
+                android:textSize="40px" />
+            <TextView
+                android:id="@+id/a1"
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_margin="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#31859c"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="B"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_margin="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#31859c"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="C"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_margin="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#31859c"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="D"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_margin="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#31859c"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="E"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_margin="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#31859c"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="F"
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_margin="4dp"
+                android:background="#2a7287"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=" "
+                android:textSize="40px" />
+        </TableRow>
+
+
+    </TableLayout>
+
+</LinearLayout>
