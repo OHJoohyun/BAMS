@@ -41,8 +41,13 @@ public class StudentActivity extends AppCompatActivity {
                 break;
             }
             case R.id.state_button: {
+                /*
                 Toast.makeText(StudentActivity.this, "현재상태", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawer(drawerView);
+                break;
+                */
+                Intent intent = new Intent(this, StateActivity.class);
+                startActivity(intent);
                 break;
             }
             case R.id.option_button: {

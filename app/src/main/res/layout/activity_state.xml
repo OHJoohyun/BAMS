@@ -7,23 +7,15 @@
     android:background="@drawable/blank"
     android:orientation="vertical"
     android:id="@+id/beaconLayout">
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_height="150px"
+        android:gravity="center_horizontal"
         >
-
-        <Button
-            android:layout_gravity="center_vertical"
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="160px"
-            android:textColor="@color/wh"
-            android:textSize="12pt"
-            android:background="#00ff0000"
-            android:onClick="onClick"/>
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/current_condition"
@@ -173,4 +165,9 @@
             />
 
     </LinearLayout>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/activity_student" />
 </LinearLayout>
