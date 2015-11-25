@@ -23,9 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckDuplicatioinId myAsyncTask;
     public String check = "Error";
-    static public String username = "Error";
-    static public String student_no = "Error";
-    static public String email = "Error";
     public String result;
 
     @Override
@@ -53,10 +50,6 @@ public class MainActivity extends AppCompatActivity {
     public void success()
     {
         Intent intent = new Intent(this, StudentActivity.class);
-        intent.putExtra("name", username);
-        intent.putExtra("student_no", student_no);
-        intent.putExtra("email", email);
-
         Log.e("TEST", check);
         if(check.equals("200"))
         {
@@ -65,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(MainActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "실패", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -106,14 +99,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("BAMS", sResult);
 
                 JSONObject jsonObject = new JSONObject(sResult);
-                JSONObject userinfo = new JSONObject(jsonObject.getString("user"));
                 check = jsonObject.getString("response").toString();
-                username = userinfo.getString("name").toString() ;
-                student_no = userinfo.getString("student_no").toString();
-                email = userinfo.getString("email").toString();
-
                 Log.e("BAMS", jsonObject.getString("response"));
-                Log.e("BAMS", username);
+                Log.e("BAMS", check);
                 success();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
