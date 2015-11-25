@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blank"
+    android:orientation="vertical"
+    android:id="@+id/beaconLayout">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:layout_gravity="center_vertical"
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="160px"
+            android:textColor="@color/wh"
+            android:textSize="12pt"
+            android:background="00ff0000"
+            android:onClick="onClick"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/current_condition"
+            android:textColor="@color/wh"
+            android:textSize="10pt"
+            tools:ignore="UnusedAttribute" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30pt"
+            android:gravity="center"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/course_name"
+                android:textColor="@color/wh"
+                android:textSize="10pt"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/cName"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/classroom"
+                android:textColor="@color/wh"
+                android:textSize="10pt"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/cRoom"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/wh"
+                android:textSize="10pt"
+                android:gravity="center"
+                />
+            <TextView
+                android:id="@+id/cTime"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:max="100"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="@string/current_time"
+                android:textColor="@color/wh"
+                android:textSize="10pt"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/nowTime"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="10pt"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25pt"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/attend"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="@string/attended"
+            android:textSize="8pt"
+            android:textColor="@color/wh"
+            />
+        <TextView
+            android:id="@+id/late"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/late"
+            android:textSize="8pt"
+            android:textColor="@color/wh"
+            />
+        <TextView
+            android:id="@+id/absent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/absent"
+            android:textSize="8pt"
+            android:textColor="@color/wh"
+            />
+
+    </LinearLayout>
+</LinearLayout>
