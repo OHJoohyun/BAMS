@@ -20,7 +20,7 @@
             android:layout_height="160px"
             android:textColor="@color/wh"
             android:textSize="12pt"
-            android:background="00ff0000"
+            android:background="#00ff0000"
             android:onClick="onClick"/>
         <TextView
             android:layout_width="fill_parent"
