@@ -39,8 +39,7 @@ public class StartActivity extends Activity {
                 break;
             }
             case R.id.state_button: {
-                Toast.makeText(StartActivity.this, "현재상태", Toast.LENGTH_SHORT).show();
-                drawerLayout.closeDrawer(drawerView);
+
                 break;
             }
             case R.id.option_button: {
