@@ -19,6 +19,8 @@
             android:layout_marginLeft="21dp"
             android:id="@+id/menu_button"
             android:onClick="onClick" />
+
+
     </FrameLayout>
 
     <LinearLayout
@@ -31,11 +33,29 @@
         android:weightSum="1"
         android:paddingRight="10dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="30dp"
+            android:text=""
+            android:id="@+id/printName"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="30dp"
+            android:text=""
+            android:id="@+id/printMail"
+            android:layout_gravity="center_horizontal" />
+
         <Button
             android:layout_width="320dp"
             android:layout_height="66dp"
+            android:layout_marginTop="42dp"
             android:background="#0000"
-            android:layout_marginTop="148dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/schedule_button"
             android:onClick="onClick" />
@@ -43,8 +63,8 @@
         <Button
             android:layout_width="320dp"
             android:layout_height="66dp"
-            android:background="#0000"
             android:layout_marginTop="0dp"
+            android:background="#0000"
             android:layout_marginLeft="0dp"
             android:id="@+id/state_button"
             android:onClick="onClick" />
@@ -52,8 +72,8 @@
         <Button
             android:layout_width="320dp"
             android:layout_height="66dp"
-            android:background="#0000"
             android:layout_marginTop="0dp"
+            android:background="#0000"
             android:layout_marginLeft="0dp"
             android:id="@+id/option_button"
             android:onClick="onClick" />
@@ -61,12 +81,13 @@
         <Button
             android:layout_width="320dp"
             android:layout_height="66dp"
-            android:background="#0000"
             android:layout_marginTop="0dp"
+            android:background="#0000"
             android:layout_marginLeft="0dp"
             android:id="@+id/logout_button"
             android:onClick="onClick" />
     </LinearLayout>
+
 
     <!-- Drawer -->
 

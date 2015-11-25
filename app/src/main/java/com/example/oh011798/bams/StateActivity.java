@@ -10,11 +10,9 @@ import android.widget.ProgressBar;
  */
 public class StateActivity extends AppCompatActivity implements Runnable {
 
-
     ProgressBar progressBar;
     int progress = 0;
     Thread thread;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

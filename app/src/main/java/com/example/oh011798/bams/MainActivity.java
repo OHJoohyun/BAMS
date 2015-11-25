@@ -1,6 +1,5 @@
 package com.example.oh011798.bams;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
 import android.content.Intent;
@@ -10,10 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
-import com.perples.recosdk.RECOBeaconManager;
-import com.perples.recosdk.RECOBeaconRegion;
-import com.perples.recosdk.RECOServiceConnectListener;
 
 import org.json.JSONObject;
 
@@ -25,7 +20,6 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -76,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckDuplicatioinId myAsyncTask;
     public String check = "Error";
+    static public String username = "Error";
+    static public String student_no = "Error";
+    static public String email = "Error";
     public String result;
 
     @Override
@@ -103,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
     public void success()
     {
         Intent intent = new Intent(this, StudentActivity.class);
+        intent.putExtra("name", username);
+        intent.putExtra("student_no", student_no);
+        intent.putExtra("email", email);
+
         Log.e("TEST", check);
         if(check.equals("200"))
         {
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(MainActivity.this, "실패", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -152,9 +153,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("BAMS", sResult);
 
                 JSONObject jsonObject = new JSONObject(sResult);
+                JSONObject userinfo = new JSONObject(jsonObject.getString("user"));
                 check = jsonObject.getString("response").toString();
+                username = userinfo.getString("name").toString() ;
+                student_no = userinfo.getString("student_no").toString();
+                email = userinfo.getString("email").toString();
+
                 Log.e("BAMS", jsonObject.getString("response"));
-                Log.e("BAMS", check);
+                Log.e("BAMS", username);
                 success();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -205,7 +211,6 @@ public class MainActivity extends AppCompatActivity {
         protected abstract void start(ArrayList<RECOBeaconRegion> regions);
         protected abstract void stop(ArrayList<RECOBeaconRegion> regions);
     }
-
-
 */
 }
+

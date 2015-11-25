@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 /**
@@ -16,12 +17,34 @@ import android.widget.Toast;
 public class SignupActivity extends Activity{
 
     final Context context = this;
+    private EditText name;
+    private EditText student_no;
+    private EditText password;
+    private EditText email;
+    private EditText phone;
+    private Button major;
+
+    /*
+    name = (EditText)findViewById(R.id.signup_name);
+    id = (EditText)findViewById(R.id.signup_id);
+    password = (EditText)findViewById(R.id.signup_password);
+    email = (EditText)findViewById(R.id.signup_email);
+    phone = (EditText)findViewById(R.id.signup_phone);
+    major = (Button)findViewById(R.id.signup_button);
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        name = (EditText)findViewById(R.id.signup_name);
+        student_no = (EditText)findViewById(R.id.signup_id);
+        password = (EditText)findViewById(R.id.signup_password);
+        email = (EditText)findViewById(R.id.signup_email);
+        phone = (EditText)findViewById(R.id.signup_phone);
+        major = (Button)findViewById(R.id.signup_button);
     }
 
     public void onClick(View view)
@@ -30,7 +53,6 @@ public class SignupActivity extends Activity{
         {
             case R.id.ok:{
                 Toast.makeText(SignupActivity.this, "회원가입 성공!!", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();

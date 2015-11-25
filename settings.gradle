@@ -1,1 +1,1 @@
-include ':app', ':reco-sdk-android_0.3.1'
+include ':reco-sdk-android_0.3.1', ':app'
