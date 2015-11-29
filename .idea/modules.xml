@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/reco-sdk-android_0.3.1/reco-sdk-android_0.3.1.iml" filepath="$PROJECT_DIR$/reco-sdk-android_0.3.1/reco-sdk-android_0.3.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/reco-sdk-android_0.3.1/reco-sdk-android_0.3.1.iml" filepath="$PROJECT_DIR$/reco-sdk-android_0.3.1/reco-sdk-android_0.3.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reco-sdk-android_0.3.1/reco-sdk-android_0.3.1.iml" filepath="$PROJECT_DIR$/reco-sdk-android_0.3.1/reco-sdk-android_0.3.1.iml" />
     </modules>
   </component>
 </project>

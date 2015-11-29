@@ -66,6 +66,8 @@ public class StudentActivity extends AppCompatActivity {
                 break;
             }
             case R.id.state_button: {
+                Intent intent = new Intent(this, StateActivity.class);
+                startActivity(intent);
                 finish();
                 break;
             }

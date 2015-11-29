@@ -79,8 +79,8 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     private static final int REQUEST_ENABLE_BT = 1;
     private static final int REQUEST_LOCATION = 10;
 
-    // private BluetoothManager sBluetoothManager;
-    // private BluetoothAdapter sBluetoothAdapter;
+    private BluetoothManager sBluetoothManager;
+    private BluetoothAdapter sBluetoothAdapter;
 
     private View sLayout;
     ProgressBar progressBar;
@@ -90,21 +90,17 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     private RECOBeaconManager recoManager;
     private ArrayList<RECOBeaconRegion> rangingRegions;
 
-    // RecoBackgroundMonitoringService bms = new RecoBackgroundMonitoringService();
-    // RecoBackgroundRangingService brs = new RecoBackgroundRangingService();
-
+    RecoBackgroundMonitoringService bms = new RecoBackgroundMonitoringService();
+    RecoBackgroundRangingService brs = new RecoBackgroundRangingService();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_state);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
         sLayout=findViewById(R.id.stateLayout);
-
-
-        /*
+        // request for bluetooth connection
         sBluetoothManager=(BluetoothManager)getSystemService(Context.BLUETOOTH_SERVICE);
         sBluetoothAdapter=sBluetoothManager.getAdapter();
-
 
         if(sBluetoothAdapter==null || !sBluetoothAdapter.isEnabled()){
             Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -126,13 +122,10 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         recoManager.bind(this);
         recoManager.setRangingListener(this);
 
-        onServiceConnect();
-        */
-
     }
 
 
-
+    // for recoManager.bind(this);
     @Override
     public void onServiceConnect(){
         Toast toast = Toast.makeText(this,"연결되었습니다",Toast.LENGTH_SHORT);
@@ -153,12 +146,13 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
             }
         }
     }
+    // for recoManager.bind(this);
 
     @Override
     public void onServiceFail(RECOErrorCode arg0){
         // TODO Auto-generated method stub
     }
-
+    // for RangingListener
     @Override
     public void didRangeBeaconsInRegion(Collection<RECOBeacon> arg0,RECOBeaconRegion arg1){
 
@@ -180,13 +174,13 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         }
 
     }
-
+    // for RangingListener
     @Override
     public void rangingBeaconsDidFailForRegion(RECOBeaconRegion arg0,RECOErrorCode arg1){
         Toast toast = Toast.makeText(this,"failed",Toast.LENGTH_SHORT);
         toast.show();
     }
-
+    // for progressbar
     public void start(View v) {
         thread = new Thread(this);
         thread.start();
@@ -220,7 +214,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     }
 
 
-
+    // for progressbar
     @Override
     public void run() {
         progress = 0;
@@ -240,7 +234,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         super.onDestroy();
     }
 
-    /*
+
 
     private void requestLocationPermission() {
         if(!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
@@ -248,7 +242,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
             return;
         }
 
-        Snackbar.make(mLayout, R.string.location_permission_rationale, Snackbar.LENGTH_INDEFINITE)
+        Snackbar.make(sLayout, R.string.location_permission_rationale, Snackbar.LENGTH_INDEFINITE)
                 .setAction(R.string.ok, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -258,7 +252,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
                 .show();
     }
 
-
+    /*
     private boolean isBackgroundMonitoringServiceRunning(Context context) {
         ActivityManager am = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
         for(ActivityManager.RunningServiceInfo runningService : am.getRunningServices(Integer.MAX_VALUE)) {
