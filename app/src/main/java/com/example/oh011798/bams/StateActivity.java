@@ -79,10 +79,10 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     private static final int REQUEST_ENABLE_BT = 1;
     private static final int REQUEST_LOCATION = 10;
 
-    private BluetoothManager mBluetoothManager;
-    private BluetoothAdapter mBluetoothAdapter;
+    // private BluetoothManager sBluetoothManager;
+    // private BluetoothAdapter sBluetoothAdapter;
 
-    private View mLayout;
+    private View sLayout;
     ProgressBar progressBar;
     int progress = 0;
     Thread thread;
@@ -91,30 +91,33 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     private ArrayList<RECOBeaconRegion> rangingRegions;
 
     // RecoBackgroundMonitoringService bms = new RecoBackgroundMonitoringService();
-    RecoBackgroundRangingService brs = new RecoBackgroundRangingService();
+    // RecoBackgroundRangingService brs = new RecoBackgroundRangingService();
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_state);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
-        mLayout=findViewById(R.id.stateLayout);
+        sLayout=findViewById(R.id.stateLayout);
 
-        mBluetoothManager=(BluetoothManager)getSystemService(Context.BLUETOOTH_SERVICE);
-        mBluetoothAdapter=mBluetoothManager.getAdapter();
 
-        if(mBluetoothAdapter==null || !mBluetoothAdapter.isEnabled()){
+        /*
+        sBluetoothManager=(BluetoothManager)getSystemService(Context.BLUETOOTH_SERVICE);
+        sBluetoothAdapter=sBluetoothManager.getAdapter();
+
+
+        if(sBluetoothAdapter==null || !sBluetoothAdapter.isEnabled()){
             Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBTIntent,REQUEST_ENABLE_BT);
         }
 
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             if(ActivityCompat.checkSelfPermission(getApplicationContext(),Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-                Log.i("MainActivity", "The location permission (ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION) is not granted.");
+                Log.i("StateActivity", "The location permission (ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION) is not granted.");
                 this.requestLocationPermission();
             }
             else{
-                Log.i("MainActivity", "The location permission (ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION) is already granted.");
+                Log.i("StateActivity", "The location permission (ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION) is already granted.");
 
             }
         }
@@ -123,7 +126,12 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         recoManager.bind(this);
         recoManager.setRangingListener(this);
 
+        onServiceConnect();
+        */
+
     }
+
+
 
     @Override
     public void onServiceConnect(){
@@ -150,6 +158,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     public void onServiceFail(RECOErrorCode arg0){
         // TODO Auto-generated method stub
     }
+
     @Override
     public void didRangeBeaconsInRegion(Collection<RECOBeacon> arg0,RECOBeaconRegion arg1){
 
@@ -186,7 +195,6 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_ENABLE_BT && resultCode == Activity.RESULT_CANCELED) {
-            //If the request to turn on bluetooth is denied, the app will be finished.
             //사용자가 블루투스 요청을 허용하지 않았을 경우, 어플리케이션은 종료됩니다.
             finish();
             return;
@@ -199,9 +207,9 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         switch(requestCode) {
             case REQUEST_LOCATION : {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Snackbar.make(mLayout, R.string.location_permission_granted, Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(sLayout, R.string.location_permission_granted, Snackbar.LENGTH_LONG).show();
                 } else {
-                    Snackbar.make(mLayout, R.string.location_permission_not_granted, Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(sLayout, R.string.location_permission_not_granted, Snackbar.LENGTH_LONG).show();
                 }
             }
             default :
@@ -210,6 +218,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
 
 
     }
+
 
 
     @Override
@@ -231,6 +240,8 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         super.onDestroy();
     }
 
+    /*
+
     private void requestLocationPermission() {
         if(!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, REQUEST_LOCATION);
@@ -247,7 +258,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
                 .show();
     }
 
-    /*
+
     private boolean isBackgroundMonitoringServiceRunning(Context context) {
         ActivityManager am = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
         for(ActivityManager.RunningServiceInfo runningService : am.getRunningServices(Integer.MAX_VALUE)) {
