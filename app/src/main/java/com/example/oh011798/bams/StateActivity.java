@@ -98,6 +98,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         setContentView(R.layout.activity_state);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
         sLayout=findViewById(R.id.stateLayout);
+
         // request for bluetooth connection
         sBluetoothManager=(BluetoothManager)getSystemService(Context.BLUETOOTH_SERVICE);
         sBluetoothAdapter=sBluetoothManager.getAdapter();
@@ -125,7 +126,8 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
     }
 
 
-    // for recoManager.bind(this);
+    // callback method for recoManager.bind(this); from onCreate method
+    // when connection success
     @Override
     public void onServiceConnect(){
         Toast toast = Toast.makeText(this,"연결되었습니다",Toast.LENGTH_SHORT);
@@ -146,12 +148,14 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
             }
         }
     }
-    // for recoManager.bind(this);
 
+    // callback method for recoManager.bind(this); from onCreate method
+    // when connection fails
     @Override
     public void onServiceFail(RECOErrorCode arg0){
         // TODO Auto-generated method stub
     }
+
     // for RangingListener
     @Override
     public void didRangeBeaconsInRegion(Collection<RECOBeacon> arg0,RECOBeaconRegion arg1){
@@ -174,18 +178,22 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         }
 
     }
+
     // for RangingListener
     @Override
     public void rangingBeaconsDidFailForRegion(RECOBeaconRegion arg0,RECOErrorCode arg1){
         Toast toast = Toast.makeText(this,"failed",Toast.LENGTH_SHORT);
         toast.show();
     }
+
     // for progressbar
     public void start(View v) {
         thread = new Thread(this);
         thread.start();
     }
 
+
+    // callback method for bluetooth connection
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_ENABLE_BT && resultCode == Activity.RESULT_CANCELED) {
@@ -196,6 +204,7 @@ public class StateActivity extends AppCompatActivity implements Runnable, RECOSe
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    // callback method for bluetooth connection
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch(requestCode) {
